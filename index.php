@@ -12,7 +12,6 @@
 	</head>
 	<body>
 		<div class="container">	
-
 			<header>
 				<h1>Sistema de administração de imóveis<span>para fins acadêmicos</span></h1>	
 			</header>
@@ -36,7 +35,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="./lotes.php">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-portfolio"></i>
 								</span>
@@ -44,7 +43,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="./clientes.php">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>

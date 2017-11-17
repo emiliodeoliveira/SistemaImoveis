@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Sistema de administração de imóveis - Consultas</title>
+<title>Sistema de administração de imóveis - Condomínios</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
@@ -11,7 +11,6 @@
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <body class="ppi-default-light-grey">
-
 <!-- Top container -->
 <div class="ppi-default-bar ppi-default-top ppi-default-black ppi-default-large" style="z-index:4">
   <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>

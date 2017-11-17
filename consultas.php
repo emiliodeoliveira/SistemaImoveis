@@ -47,55 +47,44 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Overlay -->
 <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- Page Content -->
-<div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
-
+  <!-- Page Content -->
+  <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
   <!-- Header -->
   <header class="ppi-default-container" style="padding-top:22px">
     <h5><b>Pesquisa</b></h5>
   </header>
-<div class="ppi-default-container">
+    <div class="ppi-default-container">
     <h5>Resultados:</h5> 
-
- <div class="ppi-default-container">
-    <h5>Condomínios</h5>
-    <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
-      <tr>
-        <td>Copa D'or</td>
-      </tr>
-      <tr>
-        <td>Arraial do Cabo</td>
-      </tr>
-
-    </table><br>
-
-     <h5>Lotes</h5>
-    <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
-      <tr>
-        <td>Lote 1</td>
-      </tr>
-        </table><br>
-    <h5>Clientes</h5>
-    <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
-      <tr>
-        <td>Marcelo Fonseca</td>
-      </tr>
-
-
-
-
-    </table><br>
-  </div>
-
+      <div class="ppi-default-container">
+      <h5>Condomínios</h5>
+      <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
+        <tr>
+          <td>Copa D'or</td>
+        </tr>
+        <tr>
+          <td>Arraial do Cabo</td>
+        </tr>
+      </table><br>
+       <h5>Lotes</h5>
+      <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
+        <tr>
+          <td>Lote 1</td>
+        </tr>
+          </table><br>
+      <h5>Clientes</h5>
+      <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
+        <tr>
+          <td>Marcelo Fonseca</td>
+        </tr>
+      </table><br>
+    </div>
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>Sistema de administração de imóveis</h4>
     <p>Powered by Emilio e Bruno Oliveira</a></p>
   </footer>
-
   <!-- End page content -->
 </div>
-
 <script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
