@@ -60,7 +60,7 @@
 							</a>
 						</li>
 						<li>
-							<a href=".s/obre.php">
+							<a href="./sobre.php">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-contact"></i>
 								</span>
