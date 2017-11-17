@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Sistema de cadastro</title>
+		<title>Sistema de administração de imóveis</title>
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -60,7 +60,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href=".s/obre.php">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-contact"></i>
 								</span>

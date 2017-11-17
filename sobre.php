@@ -39,51 +39,30 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Condomínios</a>
     <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-users fa-fw"></i>  Lotes</a>
     <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-user fa-fw"></i>  Clientes</a>
-    <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-search fa-fw"></i>  Consultas</a>
-    <a href="./sobre.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bell fa-fw"></i>  Sobre</a><br><br>
+    <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding "><i class="fa fa-search fa-fw"></i>  Consultas</a>
+    <a href=".sobre.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-bell fa-fw"></i>  Sobre</a><br><br>
   </div>
 </nav>
+
+
 <!-- Overlay -->
 <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- Page Content -->
+<!-- Page content -->
 <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
   <header class="ppi-default-container" style="padding-top:22px">
-    <h5><b>Pesquisa</b></h5>
+    <h5><b>Sobre</b></h5>
   </header>
 <div class="ppi-default-container">
-    <h5>Resultados:</h5> 
+  <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
+    <h5>Trabalho de Programação para Internet</h5>
+    <div class="ppi-default-row ">
 
- <div class="ppi-default-container">
-    <h5>Condomínios</h5>
-    <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
-      <tr>
-        <td>Copa D'or</td>
-      </tr>
-      <tr>
-        <td>Arraial do Cabo</td>
-      </tr>
-
-    </table><br>
-
-     <h5>Lotes</h5>
-    <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
-      <tr>
-        <td>Lote 1</td>
-      </tr>
-        </table><br>
-    <h5>Clientes</h5>
-    <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
-      <tr>
-        <td>Marcelo Fonseca</td>
-      </tr>
-
-
-
-
-    </table><br>
+        <p>Trabalho desenvolvido por Bruno de Oliveira e Emilio de Oliveira.</p><br>
+        </div>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -119,6 +98,5 @@ function w3_close() {
     overlayBg.style.display = "none";
 }
 </script>
-
 </body>
 </html>
