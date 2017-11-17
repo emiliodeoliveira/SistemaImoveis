@@ -63,7 +63,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Condomínios cadastrados</h5>
     <div class="ppi-default-row ">
       <div class="ppi-default-col m2 text-center">
-        <img class="ppi-default-circle" src="/w3images/avatar3.png" style="width:96px;height:96px">
+        <img class="ppi-default-circle" src="./images/cond-arraial-cabo.jpg" style="width:96px;height:96px">
       </div>
       <div class="ppi-default-col m10 ppi-default-container">
         <h4>Condomínio Arraial do Cabo<span class="ppi-default-opacity ppi-default-medium">Lote 1</span></h4>
@@ -72,11 +72,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     <div class="ppi-default-row">
       <div class="ppi-default-col m2 text-center">
-        <img class="ppi-default-circle" src="/w3images/avatar1.png" style="width:96px;height:96px">
+        <img class="ppi-default-circle" src="./images/cond-copa-dor.jpg" style="width:96px;height:96px">
       </div>
       <div class="ppi-default-col m10 ppi-default-container">
         <h4>Condomínio Copa D'Or <span class="ppi-default-opacity ppi-default-medium">Lote 3</span></h4>
-        <p>Apartamento na região central de São Paulo</p><br>
+        <p>Condomínio na região sul de São Paulo.</p><br>
       </div>
     </div>
   </div>

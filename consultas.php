@@ -80,7 +80,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Clientes</h5>
     <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
       <tr>
-        <td>Lote 1</td>
+        <td>Marcelo Fonseca</td>
       </tr>
 
 
