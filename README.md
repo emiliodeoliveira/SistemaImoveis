@@ -1,4 +1,6 @@
-Sistema de administração de imóveis
+#Sistema de administração de imóveis
 
-versão 0.1
+Versão 0.2
+Criado por Bruno de Oliveira e Emilio de Oliveira
+
 
