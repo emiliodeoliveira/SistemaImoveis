@@ -51,9 +51,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </header>
 <div class="ppi-default-container">
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-    <h5>Página ainda não implantada!</h5>
+    <h5>Página em construção!</h5>
     <div class="ppi-default-row ">
-        <p>Estamos trabalhando para implantar essa funcionalidade.</p><br>
+        <p>Estamos trabalhando para implementar essa funcionalidade.</p><br>
         </div>
     </div>
   </div>

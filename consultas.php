@@ -53,8 +53,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <header class="ppi-default-container" style="padding-top:22px">
     <h5><b>Pesquisa</b></h5>
   </header>
+
     <div class="ppi-default-container">
-    <h5>Resultados:</h5> 
+    <h5>Resultados:</h5>
+  <form class="ppi-default-container">
+      <p>
+      <input class="ppi-default-input" placeholder="Pesquisar..." type="text">
+    </form> 
       <div class="ppi-default-container">
       <h5>Condomínios</h5>
       <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
