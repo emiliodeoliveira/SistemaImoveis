@@ -75,6 +75,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <span class="ppi-default-xlarge">Claire Mattos</span><br>
       </li>
     </ul>
+    </div>
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">
