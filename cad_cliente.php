@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Sistema de administração de imóveis - Condomínios</title>
+<title>Sistema de administração de imóveis - Cadastro de cliente</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
@@ -37,7 +37,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="ppi-default-bar-block">
     <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding-16 ppi-default-hide-large ppi-default-dark-grey ppi-default-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar menu</a>
     <a href="./index.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
-    <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Condomínios</a>
+    <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Clientes</a>
     <a href="./lotes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-users fa-fw"></i>  Lotes</a>
     <a href="./clientes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-user fa-fw"></i>  Clientes</a>
     <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-search fa-fw"></i>  Consultas</a>
@@ -52,38 +52,42 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="ppi-default-container" style="padding-top:22px">
-    <h5><b>Condomínios</b></h5>
+    <h5><b>Clientes</b></h5>
   </header>
-  
-
-
-
   <div class="ppi-default-container">
-    <!-- Middle Menu -->
+  <!-- Middle Menu -->
   <div class="middle-menu">
-      <input class="checked" id="tab1" type="button" name="tabs" checked>
+      <input class="button-hover" id="tab1" type="button" name="tabs" checked>
   <label for="tab1"><a href="./clientes.php">Listar</a></label>
-     <input class="button-hover" id="tab2" type="button" name="tabs">
+     <input class="checked" id="tab2" type="button" name="tabs">
   <label for="tab2"><a href="./cad_cliente.php">Cadastrar</a></label> 
 </div> 
-    <ul class="ppi-default-ul ppi-default-card-4 ppi-default-white">
-      <li class="ppi-default-padding-16">
-        <img src="./images/avatar2.png" class="ppi-default-left ppi-default-circle ppi-default-margin-right" style="width:35px">
-        <span class="ppi-default-xlarge">Marcelo Fonseca</span><br>
-      </li>
-      <li class="ppi-default-padding-16">
-        <img src="./images/avatar5.png" class="ppi-default-left ppi-default-circle ppi-default-margin-right" style="width:35px">
-        <span class="ppi-default-xlarge">Adriana Althaus</span><br>
-      </li>
-      <li class="ppi-default-padding-16">
-        <img src="./images/avatar6.png" class="ppi-default-left ppi-default-circle ppi-default-margin-right" style="width:35px">
-        <span class="ppi-default-xlarge">Claire Mattos</span><br>
-      </li>
-    </ul>
+<!-- White frame -->
+  <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
+    <h5>Cadastro de condomínio</h5>
+    <div class="ppi-default-row ">
+      
+<div class="div-form">
+  <form action="/action_page.php">
+    <h5>Nome</h5>
+    <input class="input-form" type="text" id="fname" name="firstname" placeholder="Digite seu nome...">
+
+    <h5>Sobrenome</h5>
+    <input class="input-form" type="text" id="lname" name="lastname" placeholder="Sobrenome">
+
+    <h5>País</h5>
+    <select id="country" name="country">
+      <option value="brasil">Brasil</option>
+      <option value="canada">Canada</option>
+      <option value="eua">EUA</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
 
-
-
+    </div>
+    
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">

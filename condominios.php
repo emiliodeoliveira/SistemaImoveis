@@ -57,10 +57,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="ppi-default-container">
   <!-- Middle Menu -->
   <div class="middle-menu">
-      <input id="tab1" type="radio" name="tabs" checked>
-  <label for="tab1">Listar</label>
-     <input id="tab2" type="radio" name="tabs">
-  <label for="tab2">Cadastrar</label> 
+      <input class="checked" id="tab1" type="button" name="tabs" checked>
+  <label for="tab1"><a href="./condominios.php">Listar</a></label>
+     <input class="button-hover" id="tab2" type="button" name="tabs">
+  <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
 </div> 
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
     <h5>Condomínios cadastrados</h5>
@@ -83,9 +83,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-
   <br>
- 
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">
       <div class="ppi-default-container ppi-default-third">
@@ -97,43 +95,37 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="ppi-default-container ppi-default-third">
         <h5 class="ppi-default-bottombar ppi-default-border-red">Clientes</h5>
         <p>Cadastrados</p>
-        <p>Ativos</p>
-       
+        <p>Ativos</p> 
       </div>
-
     </div>
   </div>
-
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>Sistema de administração de imóveis</h4>
     <p>Powered by Emilio e Bruno Oliveira</a></p>
   </footer>
-
   <!-- End page content -->
-</div>
-
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
-    }
-}
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-}
-</script>
-
+	</div>
+	<script>
+	// Get the Sidebar
+	var mySidebar = document.getElementById("mySidebar");
+	// Get the DIV with overlay effect
+	var overlayBg = document.getElementById("myOverlay");
+	// Toggle between showing and hiding the sidebar, and add overlay effect
+	function w3_open() {
+	    if (mySidebar.style.display === 'block') {
+	        mySidebar.style.display = 'none';
+	        overlayBg.style.display = "none";
+	    } else {
+	        mySidebar.style.display = 'block';
+	        overlayBg.style.display = "block";
+	    }
+	}
+	// Close the sidebar with the close button
+	function w3_close() {
+	    mySidebar.style.display = "none";
+	    overlayBg.style.display = "none";
+	}
+	</script>
 </body>
 </html>
