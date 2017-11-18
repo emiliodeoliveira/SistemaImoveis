@@ -23,7 +23,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="ppi-default-col s4">
       <img src="/w3images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
     </div>
-    
     <div class="ppi-default-col s8 ppi-default-bar">
       <span>Olá, <strong>Senac</strong></span><br>
      
@@ -54,10 +53,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <header class="ppi-default-container" style="padding-top:22px">
     <h5><b>Condomínios</b></h5>
   </header>
-  
-
-
-
   <div class="ppi-default-container">
     <!-- Middle Menu -->
   <div class="middle-menu">
@@ -80,10 +75,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <span class="ppi-default-xlarge">Claire Mattos</span><br>
       </li>
     </ul>
-
-
-
-
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">

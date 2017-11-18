@@ -16,7 +16,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="ppi-default-bar-item ppi-default-left">Sistema de administração de imóveis</span>
 </div>
-
 <!-- Sidebar/menu -->
 <nav class="ppi-default-sidebar ppi-default-collapse ppi-default-white ppi-default-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="ppi-default-container ppi-default-row">
@@ -25,8 +24,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     
     <div class="ppi-default-col s8 ppi-default-bar">
-      <span>Olá, <strong>Senac</strong></span><br>
-     
+      <span>Olá, <strong>Senac</strong></span><br>     
     </div>
   </div>
   <hr>
@@ -43,51 +41,49 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-search fa-fw"></i>  Consultas</a>
     <a href="./sobre.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bell fa-fw"></i>  Sobre</a><br><br>
   </div>
-</nav>
-<!-- Overlay -->
-<div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  </nav>
+  <!-- Overlay -->
+  <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- !PAGE CONTENT! -->
+  <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
+    <!-- Header -->
+    <header class="ppi-default-container" style="padding-top:22px">
+      <h5><b>Condomínios</b></h5>
+    </header>
+      <div class="ppi-default-container">
+      <!-- Middle Menu -->
+      <div class="middle-menu">
+          <input class="button-hover" id="tab1" type="button" name="tabs" checked>
+      <label for="tab1"><a href="./condominios.php">Listar</a></label>
+         <input class="checked" id="tab2" type="button" name="tabs">
+      <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
+    </div> 
+    <!-- White frame -->
+      <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
+        <h5>Cadastro de condomínio</h5>
+        <div class="ppi-default-row ">
+          
+    <div class="div-form">
+      <form action="/action_page.php">
+        <h5>Nome</h5>
+        <input class="input-form" type="text" id="fname" name="firstname" placeholder="Digite o nome...">
 
-<!-- !PAGE CONTENT! -->
-<div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
+        <h5>Endereço</h5>
+        <input class="input-form" type="text" id="lname" name="lastname" placeholder="Endereço do condomínio">
 
-  <!-- Header -->
-  <header class="ppi-default-container" style="padding-top:22px">
-    <h5><b>Condomínios</b></h5>
-  </header>
-  <div class="ppi-default-container">
-  <!-- Middle Menu -->
-  <div class="middle-menu">
-      <input class="button-hover" id="tab1" type="button" name="tabs" checked>
-  <label for="tab1"><a href="./condominios.php">Listar</a></label>
-     <input class="checked" id="tab2" type="button" name="tabs">
-  <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
-</div> 
-<!-- White frame -->
-  <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-    <h5>Cadastro de condomínio</h5>
-    <div class="ppi-default-row ">
-      
-<div class="div-form">
-  <form action="/action_page.php">
-    <h5>Nome</h5>
-    <input class="input-form" type="text" id="fname" name="firstname" placeholder="Digite o nome...">
+         <h5>Administrador</h5>
+        <input class="input-form" type="text" id="lname" name="lastname" placeholder="Administrador">
 
-    <h5>Endereço</h5>
-    <input class="input-form" type="text" id="lname" name="lastname" placeholder="Endereço do condomínio">
-
-     <h5>Administrador</h5>
-    <input class="input-form" type="text" id="lname" name="lastname" placeholder="Administrador">
-
-    <h5>Lote</h5>
-    <select id="country" name="country">
-      <option value="lote1">Lote 1</option>
-      <option value="lote2">Lote 2</option>
-      <option value="lote3">Lote 3</option>
-    </select>
-    <input class="input-form" type="submit" value="Submit">
-  </form>
-</div>
-</div>
+        <h5>Lote</h5>
+        <select id="country" name="country">
+          <option value="lote1">Lote 1</option>
+          <option value="lote2">Lote 2</option>
+          <option value="lote3">Lote 3</option>
+        </select>
+        <input class="input-form" type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
 
 
     </div>

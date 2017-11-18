@@ -11,42 +11,39 @@
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <body class="ppi-default-light-grey">
-<!-- Top container -->
-<div class="ppi-default-bar ppi-default-top ppi-default-black ppi-default-large" style="z-index:4">
-  <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="ppi-default-bar-item ppi-default-left">Sistema de administração de imóveis</span>
-</div>
+  <!-- Top container -->
+  <div class="ppi-default-bar ppi-default-top ppi-default-black ppi-default-large" style="z-index:4">
+    <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+    <span class="ppi-default-bar-item ppi-default-left">Sistema de administração de imóveis</span>
+  </div>
 
 <!-- Sidebar/menu -->
-<nav class="ppi-default-sidebar ppi-default-collapse ppi-default-white ppi-default-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="ppi-default-container ppi-default-row">
-    <div class="ppi-default-col s4">
-      <img src="/w3images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
+  <nav class="ppi-default-sidebar ppi-default-collapse ppi-default-white ppi-default-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class="ppi-default-container ppi-default-row">
+      <div class="ppi-default-col s4">
+        <img src="/w3images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
+      </div>
+      <div class="ppi-default-col s8 ppi-default-bar">
+        <span>Olá, <strong>Senac</strong></span><br>
+      </div>
     </div>
-    
-    <div class="ppi-default-col s8 ppi-default-bar">
-      <span>Olá, <strong>Senac</strong></span><br>
-     
+    <hr>
+    <!-- Resposive menu -->
+    <div class="ppi-default-container">
+      <h5>Menu</h5>
     </div>
-  </div>
-  <hr>
-  <!-- Resposive menu -->
-  <div class="ppi-default-container">
-    <h5>Menu</h5>
-  </div>
-  <div class="ppi-default-bar-block">
-    <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding-16 ppi-default-hide-large ppi-default-dark-grey ppi-default-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar menu</a>
-    <a href="./index.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
-    <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Clientes</a>
-    <a href="./lotes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-users fa-fw"></i>  Lotes</a>
-    <a href="./clientes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-user fa-fw"></i>  Clientes</a>
-    <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-search fa-fw"></i>  Consultas</a>
-    <a href="./sobre.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bell fa-fw"></i>  Sobre</a><br><br>
-  </div>
-</nav>
+    <div class="ppi-default-bar-block">
+      <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding-16 ppi-default-hide-large ppi-default-dark-grey ppi-default-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar menu</a>
+      <a href="./index.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
+      <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Clientes</a>
+      <a href="./lotes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-users fa-fw"></i>  Lotes</a>
+      <a href="./clientes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-user fa-fw"></i>  Clientes</a>
+      <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-search fa-fw"></i>  Consultas</a>
+      <a href="./sobre.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bell fa-fw"></i>  Sobre</a><br><br>
+    </div>
+  </nav>
 <!-- Overlay -->
 <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
 <!-- !PAGE CONTENT! -->
 <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
 
@@ -61,33 +58,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <label for="tab1"><a href="./clientes.php">Listar</a></label>
      <input class="checked" id="tab2" type="button" name="tabs">
   <label for="tab2"><a href="./cad_cliente.php">Cadastrar</a></label> 
-</div> 
-<!-- White frame -->
+  </div> 
+  <!-- White frame -->
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
     <h5>Cadastro de condomínio</h5>
     <div class="ppi-default-row ">
-      
-<div class="div-form">
-  <form action="/action_page.php">
-    <h5>Nome</h5>
-    <input class="input-form" type="text" id="fname" name="firstname" placeholder="Digite seu nome...">
-
-    <h5>Sobrenome</h5>
-    <input class="input-form" type="text" id="lname" name="lastname" placeholder="Sobrenome">
-
-    <h5>País</h5>
-    <select id="country" name="country">
-      <option value="brasil">Brasil</option>
-      <option value="canada">Canada</option>
-      <option value="eua">EUA</option>
-    </select>
-    <input type="submit" value="Submit">
-  </form>
-</div>
-
-
-    </div>
-    
+      <div class="div-form">
+        <form action="/action_page.php">
+          <h5>Nome</h5>
+            <input class="input-form" type="text" id="fname" name="firstname" placeholder="Digite seu nome...">
+            <h5>Sobrenome</h5>
+            <input class="input-form" type="text" id="lname" name="lastname" placeholder="Sobrenome">
+          <h5>País</h5>
+          <select id="country" name="country">
+            <option value="brasil">Brasil</option>
+            <option value="canada">Canada</option>
+            <option value="eua">EUA</option>
+          </select>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>  
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">
