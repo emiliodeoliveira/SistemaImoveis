@@ -31,12 +31,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <nav class="ppi-default-sidebar ppi-default-collapse ppi-default-white ppi-default-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="ppi-default-container ppi-default-row">
     <div class="ppi-default-col s4">
-      <img src="/w3images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
+      <img src="./images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
     </div>
     <!-- Session menu -->
     <?php
     print("<div class='ppi-default-col s8 ppi-default-bar'>");
     print("<span>Olá, <strong>$usuario</strong></span><br>");
+    print("<span><font size='1'><a href='./logout.php'>Logout</a></font></span></h6><br>");
     print("</div>");
     ?>
   </div>
@@ -91,11 +92,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         print("<img class='ppi-default-circle' src='./images/$Imagem' style='width:96px;height:96px'>");
         print("</div>");
         print("<div class='ppi-default-col m10 ppi-default-container'>");
-        print("<h4>$Nome<span class='ppi-default-opacity ppi-default-medium'>Lote 1</span></h4>");
+        print("<h4>$Nome<span class='ppi-default-opacity ppi-default-medium'> Lote 1</span></h4>");
         print("<p>$Endereco</p>");
-
-        print("<h6><a href='deleta_condominio.php?cod=$Id'>Deletar</a></h6>");
-        print("<h6><a href='altera_condominio.php?cod=$Id'>Alterar</a></h6>"); 
+        print("<font size='1'><a href='deleta_condominio.php?cod=$Id'>Deletar | </a></font>");
+        print("<font size='1'><a href='altera_condominio.php?cod=$Id'>Alterar</a></font>"); 
 
         print("</div>");
         print("</div>"); }

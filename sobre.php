@@ -32,12 +32,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <nav class="ppi-default-sidebar ppi-default-collapse ppi-default-white ppi-default-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="ppi-default-container ppi-default-row">
     <div class="ppi-default-col s4">
-      <img src="/w3images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
+      <img src="./images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
     </div>
     <!-- Session menu -->
     <?php
     print("<div class='ppi-default-col s8 ppi-default-bar'>");
     print("<span>Olá, <strong>$usuario</strong></span><br>");
+    print("<span><font size='1'><a href='./logout.php'>Logout</a></font></span></h6><br>");
     print("</div>");
     ?>
   </div>
