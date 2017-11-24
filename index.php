@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
+		<?php  
+			session_start();
+			if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+			{
+				unset($_SESSION['login']);
+				unset($_SESSION['senha']);
+				header('location:login.php');
+				}
+			$logado = $_SESSION['login'];
+		?>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Sistema de administração de imóveis</title>
+		<title>iDwell - Sistema de administração de imóveis</title>
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -13,7 +23,7 @@
 	<body>
 		<div class="container">	
 			<header>
-				<h1>Sistema de administração de imóveis<span>para fins acadêmicos</span></h1>	
+				<h1>iDwell<span>Sistema de administração de imóveis para fins acadêmicos</span></h1>	
 			</header>
 			<div class="main clearfix">
 				<nav id="menu" class="nav">					
@@ -43,11 +53,11 @@
 							</a>
 						</li>
 						<li>
-							<a href="./clientes.php">
+							<a href="./pessoas.php">
 								<span class="icon">
 									<i aria-hidden="true" class="icon-team"></i>
 								</span>
-								<span>Clientes</span>
+								<span>Pessoas</span>
 							</a>
 						</li>
 						<li>
