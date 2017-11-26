@@ -77,20 +77,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <label for="tab2"><a href="./cad_pessoa.php">Cadastrar</a></label> 
 </div> 
     <ul class="ppi-default-ul ppi-default-card-4 ppi-default-white">
-      <li class="ppi-default-padding-16">
-        <img src="./images/avatar2.png" class="ppi-default-left ppi-default-circle ppi-default-margin-right" style="width:35px">
-        <span class="ppi-default-xlarge">Marcelo Fonseca</span><br>
-      </li>
-      <li class="ppi-default-padding-16">
-        <img src="./images/avatar5.png" class="ppi-default-left ppi-default-circle ppi-default-margin-right" style="width:35px">
-        <span class="ppi-default-xlarge">Adriana Althaus</span><br>
-      </li>
-      <li class="ppi-default-padding-16">
-        <img src="./images/avatar6.png" class="ppi-default-left ppi-default-circle ppi-default-margin-right" style="width:35px">
-        <span class="ppi-default-xlarge">Claire Mattos</span><br>
-      </li>
-    </ul>
-    <
+     <?php
+      header('Content-Type: text/html; charset=utf-8');
+      require("conecta.inc.php");  //inclui o arquivo para conexão
+      $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+      $resultado=mysqli_query($ok, "Select * from pessoas;");
+      while ($linha=mysqli_fetch_array($resultado)) {
+        $Id=$linha["idPessoa"];
+        $Nome=$linha["nome"];
+        $Imagem=$linha["fotoPessoa"];      
+        print("<li class='ppi-default-padding-16'>");
+        print("<img src='./images/$Imagem' class='ppi-default-left ppi-default-circle ppi-default-margin-right' style='width:35px'>");
+        print("<span class='ppi-default-xlarge'>$Nome</span><span class='ppi-default-opacity ppi-default-medium'> Administrador</span><br>");
+        print("</li>");
+        print("</ul>");
+      }
+  ?>
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">

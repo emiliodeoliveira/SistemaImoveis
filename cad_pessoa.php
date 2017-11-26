@@ -76,24 +76,34 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="ppi-default-row ">
           
       <div class="div-form">
-        <form action="insereCondominio.php" method="GET">
+        <form action="inserePessoa.php" method="POST" enctype="multipart/form-data">
           <h5>Nome</h5>
-          <input class="input-form" type="text" id="nomePessoa" name="nomePessoa" placeholder="Digite o nome do condomínio">
+          <input class="input-form" type="text" id="nomePessoa" name="nomePessoa" placeholder="Digite o nome">
 
           <h5>CPF</h5>
-          <input class="input-form" type="text" id="cpfPessoa" name="cpfPessoa" placeholder="Bairro do condomínio">
+          <input class="input-form" type="text" id="cpfPessoa" name="cpfPessoa" placeholder="Digite o bairro">
 
           <h5>Data de nascimento</h5>
-          <input class="input-form" type="date" id="dataNascPessoa" name="dataNascPessoa" >
+          <input class="input-form" type="text" id="dataNascPessoa" name="dataNascPessoa" placeholder="Digite a data de nascimento">
 
           <h5>Endereço</h5>
-          <input class="input-form" type="text" id="endPessoa" name="endPessoa" placeholder="Endereço do condomínio">
+          <input class="input-form" type="text" id="endPessoa" name="endPessoa" placeholder="Digite o endereço">
 
            <h5>Complemento</h5>
-          <input class="input-form" type="text" id="compPessoa" name="compPessoa" placeholder="Complemento">
+          <input class="input-form" type="text" id="compPessoa" name="compPessoa" placeholder="Digite o complemento">
 
            <h5>Número</h5>
-          <input class="input-form" type="text" id="numPessoa" name="numPessoa" placeholder="Número do condomínio">
+          <input class="input-form" type="text" id="numPessoa" name="numPessoa" placeholder="Digite o número endereço">
+
+           <h5>Bairro</h5>
+          <input class="input-form" type="text" id="bairroPessoa" name="bairroPessoa" placeholder="Digite o bairro">
+
+          <div class="fileContainer">
+          <label class="fileContainer">
+            Clique aqui para adicionar a foto!
+            <input type="file" name="imgPessoa" id="imgPessoa"/>
+          </label>
+        </div>    
 
           <input class="ppi-default-button ppi-default-indigo" type="submit" value="Enviar"></input>
         </form>

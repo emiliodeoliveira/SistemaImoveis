@@ -72,7 +72,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .ppi-default-col.s1{width:8.33333%}.ppi-default-col.s2{width:16.66666%}.ppi-default-col.s3{width:24.99999%}.ppi-default-col.s4{width:33.33333%}
 .ppi-default-col.s5{width:41.66666%}.ppi-default-col.s6{width:49.99999%}.ppi-default-col.s7{width:58.33333%}.ppi-default-col.s8{width:66.66666%}
 .ppi-default-col.s9{width:74.99999%}.ppi-default-col.s10{width:83.33333%}.ppi-default-col.s11{width:91.66666%}.ppi-default-col.s12{width:99.99999%}
-@media (min-width:601px){.ppi-default-col.m1{width:8.33333%}.ppi-default-col.m2{width:6.66666%}.ppi-default-col.m3,.ppi-default-quarter{width:24.99999%}.ppi-default-col.m4,.ppi-default-third{width:33.33333%}
+@media (min-width:601px){.ppi-default-col.m1{width:8.33333%}.ppi-default-col.m2{width:10.66666%}.ppi-default-col.m3,.ppi-default-quarter{width:24.99999%}.ppi-default-col.m4,.ppi-default-third{width:33.33333%}
 .ppi-default-col.m5{width:41.66666%}.ppi-default-col.m6,.ppi-default-half{width:49.99999%}.ppi-default-col.m7{width:58.33333%}.ppi-default-col.m8,.ppi-default-twothird{width:66.66666%}
 .ppi-default-col.m9,.ppi-default-threequarter{width:74.99999%}.ppi-default-col.m10{width:83.33333%}.ppi-default-col.m11{width:91.66666%}.ppi-default-col.m12{width:99.99999%}}
 @media (min-width:993px){.ppi-default-col.l1{width:8.33333%}.ppi-default-col.l2{width:16.66666%}.ppi-default-col.l3{width:24.99999%}.ppi-default-col.l4{width:33.33333%}

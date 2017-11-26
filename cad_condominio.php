@@ -80,10 +80,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           
     <div class="div-form">
 
-      <form action="insereCondominio.php" method="GET">
+      <form action="insereCondominio.php" method="POST" enctype="multipart/form-data">
         <h5>Nome</h5>
         <input class="input-form" type="text" id="nomeCond" name="nomeCond" placeholder="Digite o nome do condomínio">
-
 
         <h5>Bairro</h5>
         <input class="input-form" type="text" id="bairroCond" name="bairroCond" placeholder="Bairro do condomínio">
@@ -102,7 +101,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           <option value="imobbomfim">Imobiliária Bom fim</option>
           <option value="imobfacil">Imóbiliária Fácil</option>
         </select> -->
-
+        <div class="fileContainer">
+          <label class="fileContainer">
+            Clique aqui para adicionar a foto!
+            <input type="file" name="imgCond" id="imgCond"/>
+          </label>
+        </div>    
         <input class="ppi-default-button ppi-default-indigo" type="submit" value="Enviar"></input>
       </form>
     </div>

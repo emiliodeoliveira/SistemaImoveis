@@ -3,7 +3,6 @@
 <body>
 	<style type="text/css">	
 		@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 		.login-page {
 		  width: 360px;
 		  padding: 8% 0 0;
@@ -33,7 +32,6 @@
 		  font-size: 14px;
 		  opacity : 1;
 		  
-
 		}
 		.form button {
 		  font-family: "Roboto", sans-serif;
@@ -52,7 +50,6 @@
 		}
 		.form button:hover,.form button:active,.form button:focus {
 		  background: #43A047;
-
 		}
 		.form .message {
 		  margin: 15px 0 0;
@@ -71,8 +68,6 @@
 		  z-index: 1;
 		  max-width: 300px;
 		  margin: 0 auto;
-
-
 		}
 		.container:before, .container:after {
 		  content: "";
@@ -129,7 +124,7 @@
 		    <input type="text" name="login" id="login"  placeholder="usuário"/>
 		    <input type="password" name="senha" id="senha" placeholder="senha"/>
 		    <button>login</button> 
-		     <p class="message">Não possui cadastro? <a href="#register-form">Registrar</a></p> 
+		    <p class="message">Não possui cadastro? <a href="#register-form">Registrar</a></p> 
 		    <!-- Função de registro não implementada -->
 			<!-- <form class="register-form">
 		      <input type="text" placeholder="name"/>

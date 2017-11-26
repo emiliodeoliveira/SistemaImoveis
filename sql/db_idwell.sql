@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Nov-2017 às 04:12
+-- Generation Time: 26-Nov-2017 às 22:20
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -27,20 +27,16 @@ SET time_zone = "+00:00";
 --
 -- Estrutura da tabela `administradoras`
 --
--- FOREIGN KEY (idAdmin) REFERENCES administradoras(idAdmin)
--- PRIMARY KEY (idAdmin) 
 
 CREATE TABLE `administradoras` (
-  `idAdmin` bigint(20) NOT NULL AUTO_INCREMENT,
+  `idAdmin` bigint(20) NOT NULL,
   `cnpj` bigint(20) NOT NULL,
   `endereco` varchar(50) NOT NULL,
   `complemento` varchar(10) NOT NULL,
   `numero` varchar(10) NOT NULL,
   `razaoSocial` varchar(50) NOT NULL,
-  `bairro` varchar(50) NOT NULL,
-  PRIMARY KEY (idAdmin)  
+  `bairro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 -- --------------------------------------------------------
 
@@ -49,15 +45,13 @@ CREATE TABLE `administradoras` (
 --
 
 CREATE TABLE `condominios` (
-  `idCondominio` int(11) NOT NULL AUTO_INCREMENT,
+  `idCondominio` int(11) NOT NULL,
   `bairro` varchar(50) NOT NULL,
   `endereco` varchar(50) NOT NULL,
   `complemento` varchar(10) NOT NULL,
   `numero` varchar(10) NOT NULL,
   `nomeCondominio` varchar(50) NOT NULL,
-  `imgId` varchar(100) NOT NULL,
-  PRIMARY KEY (idCondominio),
-  FOREIGN KEY (idAdmin) REFERENCES administradoras(idAdmin)
+  `imgId` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -65,7 +59,9 @@ CREATE TABLE `condominios` (
 --
 
 INSERT INTO `condominios` (`idCondominio`, `bairro`, `endereco`, `complemento`, `numero`, `nomeCondominio`, `imgId`) VALUES
-(0, 'Cidade Baixa', 'Rua Venancio Aires', '123', '12', 'Condominio 1', 'cond-01.jpg');
+(1, 'Cidade Baixa', 'Rua Venancio Aires', '123', '12', 'Condominio 1', 'cond-01.jpg'),
+(2, 'Cidade baixa', 'Rua JosÃ© BonifÃ¡cio', '2', '32', 'CondomÃ­nio 2', 'cond-02.jpg'),
+(3, 'SÃ£o JpÃ£o', 'Rua CearÃ¡', '12', '54', 'CondomÃ­nio 3', 'cond-01.jpg');
 
 -- --------------------------------------------------------
 
@@ -74,12 +70,9 @@ INSERT INTO `condominios` (`idCondominio`, `bairro`, `endereco`, `complemento`, 
 --
 
 CREATE TABLE `lotes` (
-  `idLote` int(10) NOT NULL AUTO_INCREMENT,
+  `idLote` int(10) NOT NULL,
   `descricao` varchar(100) NOT NULL,
-  `tamanho` decimal(10,5) NOT NULL,
-  PRIMARY KEY (idLote),
-  FOREIGN KEY (idCondominio) REFERENCES condominios(idCondominio),
-  FOREIGN KEY (idPessoa) REFERENCES pessoas(idPessoa)
+  `tamanho` decimal(10,5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -89,14 +82,23 @@ CREATE TABLE `lotes` (
 --
 
 CREATE TABLE `pessoas` (
-  `idPessoa` int(10) NOT NULL AUTO_INCREMENT,
-  `cpf` bigint(20) NOT NULL,
+  `idPessoa` int(10) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
   `endereco` varchar(50) NOT NULL,
   `complemento` varchar(50) NOT NULL,
+  `numero` varchar(10) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `bairro` varchar(50) NOT NULL,
-  `dataNasc` date NOT NULL
+  `dataNasc` varchar(20) NOT NULL,
+  `fotoPessoa` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `pessoas`
+--
+
+INSERT INTO `pessoas` (`idPessoa`, `cpf`, `endereco`, `complemento`, `numero`, `nome`, `bairro`, `dataNasc`, `fotoPessoa`) VALUES
+(1, '009.032.321.-07', 'Rua Olavo Barreto Viana', '1', '22', 'Jorge Luis Prada', 'Moinhos de vento', '02/11/1985', 'joe-eazor-portrait.jpg');
 
 -- --------------------------------------------------------
 
@@ -105,7 +107,7 @@ CREATE TABLE `pessoas` (
 --
 
 CREATE TABLE `usuarios` (
-  `idUsuario` int(10) NOT NULL AUTO_INCREMENT,
+  `idUsuario` int(10) NOT NULL,
   `login` varchar(50) NOT NULL,
   `senha` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -125,7 +127,60 @@ INSERT INTO `usuarios` (`idUsuario`, `login`, `senha`) VALUES
 --
 -- Indexes for table `administradoras`
 --
+ALTER TABLE `administradoras`
+  ADD PRIMARY KEY (`idAdmin`);
 
+--
+-- Indexes for table `condominios`
+--
+ALTER TABLE `condominios`
+  ADD PRIMARY KEY (`idCondominio`);
+
+--
+-- Indexes for table `lotes`
+--
+ALTER TABLE `lotes`
+  ADD PRIMARY KEY (`idLote`);
+
+--
+-- Indexes for table `pessoas`
+--
+ALTER TABLE `pessoas`
+  ADD PRIMARY KEY (`idPessoa`);
+
+--
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`idUsuario`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `administradoras`
+--
+ALTER TABLE `administradoras`
+  MODIFY `idAdmin` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `condominios`
+--
+ALTER TABLE `condominios`
+  MODIFY `idCondominio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `pessoas`
+--
+ALTER TABLE `pessoas`
+  MODIFY `idPessoa` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `idUsuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

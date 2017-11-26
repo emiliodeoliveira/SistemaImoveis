@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <title>iDwell - Condomínios</title>
@@ -81,22 +78,29 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
     <h5>Condomínios cadastrados</h5>
     <?php
-		$nome=$_GET['nomeCond'];
-		$bairro=$_GET['bairroCond'];
-		$end=$_GET['endCond'];
-		$comp=$_GET['compCond'];
-		$num=$_GET['numCond'];
-		$imgId='cond-01.jpg';
+		$nome=$_POST['nomeCond'];
+		$bairro=$_POST['bairroCond'];
+		$end=$_POST['endCond'];
+		$comp=$_POST['compCond'];
+		$num=$_POST['numCond'];		
+    $target_dir = "./images";    
+    $target_path = "./images/";
+    $target_file = $target_path . basename ($_FILES['imgCond']['name']);
+        //if the image is moved to the images folder , do the insert
+        if (move_uploaded_file($_FILES['imgCond']['tmp_name'], $target_file)) {
+
+            $image   = basename($_FILES['imgCond']['name']);
+    }
 		if ($nome=="" or $bairro=="" or $end=="" or $comp=="" or $num=="")
 			print("Faltou preencher algum campo...");
 		else
-		{
+		  {
 			require("conecta.inc.php");
 			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 			print("Inserindo o condomínio:<p>");
-			mysqli_query($ok, "insert into condominios (bairro, endereco, complemento, numero, nomeCondominio, imgId) values ('$bairro', '$end', '$comp', '$num', '$nome', '$imgId')") or die ("Não é possível inserir condomínio!");
+			mysqli_query($ok, "insert into condominios (bairro, endereco, complemento, numero, nomeCondominio, imgId) values ('$bairro', '$end', '$comp', '$num', '$nome', '$image')") or die ("Não é possível inserir condomínio!");
 			print("condomínio inserido com sucesso: <b>$nome</b>");
-		}
+		  }
 	?>
 	<p><a href="./condominios.php">Mostrar</a></p>
 	</div>

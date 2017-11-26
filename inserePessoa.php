@@ -65,60 +65,47 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="ppi-default-container" style="padding-top:22px">
-    <h5><b>Condomínios</b></h5>
+    <h5><b>Pessoas</b></h5>
   </header>
   <div class="ppi-default-container">
   <!-- Middle Menu -->
   <div class="middle-menu">
-      <input class="checked" id="tab1" type="button" name="tabs" checked>
+      <input class="checked" id="tab1" type="button" name="tabs" >
   <label for="tab1"><a href="./condominios.php">Listar</a></label>
-     <input class="button-hover" id="tab2" type="button" name="tabs">
+     <input class="button-hover" id="tab2" type="button" name="tabs" checked>
   <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
 </div> 
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-    <h5>Condomínios cadastrados</h5>
-    
+    <h5>Cadastro de pessoas</h5>
     <?php
-      header('Content-Type: text/html; charset=utf-8');
-      require("conecta.inc.php");  //inclui o arquivo para conexão
-      $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-      $resultado=mysqli_query($ok, "Select * from condominios;");
-    
-      while ($linha=mysqli_fetch_array($resultado)) {
-        $Id=$linha["idCondominio"];
-        $Nome=$linha["nomeCondominio"];
-        $Endereco=$linha["endereco"];
-        $Imagem=$linha["imgId"];
-        print("<div class='ppi-default-row'>");
-        print("<div class='ppi-default-col m2 text-center'>");
-        print("<img class='ppi-default-circle' src='./images/$Imagem' style='width:96px;height:96px'>");
-        print("</div>");
-        print("<div class='ppi-default-col m10 ppi-default-container'>");
-        print("<h4>$Nome<span class='ppi-default-opacity ppi-default-medium'> Lote 1</span></h4>");
-        print("<p>$Endereco</p>");
-        print("<font size='1'><a href='deleta_condominio.php?cod=$Id'>Deletar | </a></font>");
-        print("<font size='1'><a href='altera_condominio.php?cod=$Id'>Alterar</a></font>"); 
-        print("</div>");
-        print("</div>"); }
-      ?>
+		$nome=$_POST['nomePessoa'];
+		$cpf=$_POST['cpfPessoa'];
+		$endereco=$_POST['endPessoa'];
+    $bairro=$_POST['bairroPessoa'];
+		$complemento=$_POST['compPessoa'];
+		$numero=$_POST['numPessoa'];		
+    $dataNasc=$_POST['dataNascPessoa']; 
+    $target_dir = "./images";    
+    $target_path = "./images/";
+    $target_file = $target_path . basename ($_FILES['imgPessoa']['name']);
+        //if the image is moved to the images folder , do the insert
+        if (move_uploaded_file($_FILES['imgPessoa']['tmp_name'], $target_file)) {
 
-  </div>
-  <br>
-  <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
-    <div class="ppi-default-row">
-      <div class="ppi-default-container ppi-default-third">
-        <h5 class="ppi-default-bottombar ppi-default-border-green">Demográfico</h5>
-        <p>Lotes</p>
-        <p>Cidades</p>
-        <p>Estados</p>
-      </div>
-      <div class="ppi-default-container ppi-default-third">
-        <h5 class="ppi-default-bottombar ppi-default-border-red">Clientes</h5>
-        <p>Cadastrados</p>
-        <p>Ativos</p> 
-      </div>
-    </div>
-  </div>
+            $image   = basename($_FILES['imgPessoa']['name']);
+    }
+		if ($nome=="" or $bairro=="" or $endereco=="" or $complemento=="" or $numero=="" or $cpf=="" or $dataNasc=="")
+			print("Faltou preencher algum campo...");
+		else
+		  {
+			require("conecta.inc.php");
+			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+			print("Inserindo o cadastro:<p>");
+			mysqli_query($ok, "insert into pessoas (nome, cpf, endereco, complemento, numero, bairro, dataNasc, fotoPessoa) values ('$nome', '$cpf', '$endereco', '$complemento', '$numero', '$bairro', '$dataNasc', '$image')") or die ("Não é possível inserir cadastro!");
+			print("Cadastro de pessoa inserido com sucesso: <b>$nome</b>");
+		  }
+	?>
+	<p><a href="./pessoas.php">Mostrar</a></p>
+	</div>
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>IDwell</h4>
