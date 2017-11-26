@@ -19,8 +19,8 @@
    	print("Endereço: <b>$Endereco</b><br>");
    	
 ?>
-<form action="confirma_deletar.php" method="get">
-<input type="hidden" name="cod_del" value="<?php print($Codigo)?>">
+<form action="confDeletaCond.php" method="get">
+<input type="hidden" name="cod_del" value="<?php print($Id)?>">
 <br><input type="submit" value="Deletar Dados">
 </form>
 <p><a href="./condominios.php">Cancelar e voltar</a>

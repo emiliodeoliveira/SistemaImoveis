@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>iDwell- Lotes</title>
+<title>iDwell - Lotes</title>
     <?php  
       session_start();
       if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
@@ -23,7 +23,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <body class="ppi-default-light-grey">
 <!-- Top container -->
-<div class="ppi-default-bar ppi-default-top ppi-default-black ppi-default-large" style="z-index:4">
+<div class="ppi-default-bar ppi-default-top ppi-default-teal ppi-default-large" style="z-index:4">
   <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="ppi-default-bar-item ppi-default-left">iDwell</span>
 </div>
@@ -49,6 +49,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="ppi-default-bar-block">
     <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding-16 ppi-default-hide-large ppi-default-dark-grey ppi-default-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar menu</a>
     <a href="./index.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
+    <a href="./administradoras.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bank fa-fw"></i>  Administradoras</a>
     <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Condomínios</a>
     <a href="./lotes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-users fa-fw"></i>  Lotes</a>
     <a href="./pessoas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-user fa-fw"></i>  Pessoas</a>

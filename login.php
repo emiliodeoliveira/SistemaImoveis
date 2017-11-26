@@ -18,6 +18,8 @@
 		  padding: 45px;
 		  text-align: center;
 		  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		  opacity : 0.9;
+		  
 		}
 		.form input {
 		  font-family: "Roboto", sans-serif;
@@ -29,6 +31,9 @@
 		  padding: 15px;
 		  box-sizing: border-box;
 		  font-size: 14px;
+		  opacity : 1;
+		  
+
 		}
 		.form button {
 		  font-family: "Roboto", sans-serif;
@@ -43,9 +48,11 @@
 		  -webkit-transition: all 0.3 ease;
 		  transition: all 0.3 ease;
 		  cursor: pointer;
+		  opacity : 1;
 		}
 		.form button:hover,.form button:active,.form button:focus {
 		  background: #43A047;
+
 		}
 		.form .message {
 		  margin: 15px 0 0;
@@ -64,6 +71,8 @@
 		  z-index: 1;
 		  max-width: 300px;
 		  margin: 0 auto;
+
+
 		}
 		.container:before, .container:after {
 		  content: "";
@@ -93,7 +102,10 @@
 		  color: #EF3B3A;
 		}
 		body {
-		  background: #ffe6e6; /* fallback for old browsers */
+		  background: url('./bg/<?php $a = array('01.jpg','02.jpg','03.jpg'); echo $a[array_rand($a)];?>');  
+		  background-size: 100%;
+		  background-repeat: no-repeat;
+		 /* background: #ffe6e6; fallback for old browsers */
 		 /* background: -webkit-linear-gradient(right, #ffe6e6, #8DC26F);
 		  background: -moz-linear-gradient(right, #ffe6e6, #8DC26F);
 		  background: -o-linear-gradient(right, #ffe6e6, #8DC26F);
@@ -108,14 +120,6 @@
 	   	$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 		});
 	</script>
-	<!-- Função de registro não implementada -->
-	<!-- <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form> -->
 	<div class="login-page">
 	  <div class="form">
 	    <form method="post" action="./ope.php" id="formlogin" name="formlogin">
@@ -124,7 +128,16 @@
 			<form class="login-form">
 		    <input type="text" name="login" id="login"  placeholder="usuário"/>
 		    <input type="password" name="senha" id="senha" placeholder="senha"/>
-		    <button>login</button>  
+		    <button>login</button> 
+		     <p class="message">Não possui cadastro? <a href="#register-form">Registrar</a></p> 
+		    <!-- Função de registro não implementada -->
+			<!-- <form class="register-form">
+		      <input type="text" placeholder="name"/>
+		      <input type="password" placeholder="password"/>
+		      <input type="text" placeholder="email address"/>
+		      <button>create</button>
+		      <p class="message">Already registered? <a href="#">Sign In</a></p>
+		    </form> -->
 	    </form>
 	  </div>
 	</div>
