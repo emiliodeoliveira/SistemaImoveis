@@ -76,31 +76,45 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
 </div> 
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-    <h5>Condomínios cadastrados</h5>
-    
-    <?php
-      header('Content-Type: text/html; charset=utf-8');
-      require("conecta.inc.php");  //inclui o arquivo para conexão
-      $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-      $resultado=mysqli_query($ok, "Select * from condominios;");
-    
-      while ($linha=mysqli_fetch_array($resultado)) {
-        $Id=$linha["idCondominio"];
+    <h5>Informações sobre o condomínio:</h5>
+      <?php
+        $Id=$_GET['Id'];
+        require("conecta.inc.php");
+        $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+        $result=mysqli_query($ok, "select * from condominios where idCondominio='$Id'") or die ("Não é possível retornar dados do condomínio!");
+        $linha=mysqli_fetch_array($result);
+        $IdAlter=$linha["idCondominio"];
         $Nome=$linha["nomeCondominio"];
         $Endereco=$linha["endereco"];
-        $Imagem=$linha["imgId"];
-        print("<div class='ppi-default-row'>");
-        print("<div class='ppi-default-col m2 text-center'>");
-        print("<img class='ppi-default-circle' src='./images/$Imagem' style='width:96px;height:96px'>");
-        print("</div>");
-        print("<div class='ppi-default-col m10 ppi-default-container'>");
-        print("<h4><a href='visualizaCondominio.php?Id=$Id'>$Nome</a><span class='ppi-default-opacity ppi-default-medium'> Lote 1</span></h4>");
-        print("<p>$Endereco</p>");
-        print("<font size='1'><a href='deletarCondominio.php?Id=$Id'>Deletar | </a></font>");
-        print("<font size='1'><a href='alterarCondominio.php?Id=$Id'>Alterar</a></font>"); 
-        print("</div>");
-        print("</div>"); }
+        $Comp=$linha['complemento'];
+        $Bairro=$linha["bairro"];
+        $Num=$linha['numero'];
+        $Imagem=$linha['imgId'];
       ?>
+        <div class='ppi-default-row'>
+        <div class='ppi-default-col m2 text-center'>
+        <img class='ppi-default-circle' src=<?php print("./images/$Imagem")?> style='width:96px;height:96px'>
+        </div>
+        <div class='ppi-default-col m10 ppi-default-container'>
+        <h4><a href='visualizaCondominio.php?Id=$Id'><?php print("$Nome")?></a></h4>
+        <span class='ppi-default-opacity ppi-default-medium'> Nome administradora</span>
+        <div class="ppi-default-row ">
+        <BR>  <BR>
+        <h5><b>Bairro:</b></h5>
+        <p><?php print("$Bairro")?></p>
+        <h5><b>Endereço:</b></h5>
+        <p><?php print("$Endereco")?></p>
+        <h5><b>Complemento:</b></h5>
+        <p><?php print("$Comp")?></p>
+        <h5><b>Número:</b></h5>
+        <p><?php print("$Num")?></p>  
+
+        <font size='3'><a href='deletarCondominio.php?Id=<?php print($Id)?>'>Deletar | </a></font>
+        <font size='3'><a href='alterarCondominio.php?Id=<?php print($Id)?>'>Alterar</a></font>
+
+        </div>
+      </div>
+      
 
   </div>
   <br>
@@ -125,27 +139,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <p>Powered by Emilio de Oliveira e Bruno de Oliveira</a></p>
   </footer>
   <!-- End page content -->
-	</div>
-	<script>
-	// Get the Sidebar
-	var mySidebar = document.getElementById("mySidebar");
-	// Get the DIV with overlay effect
-	var overlayBg = document.getElementById("myOverlay");
-	// Toggle between showing and hiding the sidebar, and add overlay effect
-	function w3_open() {
-	    if (mySidebar.style.display === 'block') {
-	        mySidebar.style.display = 'none';
-	        overlayBg.style.display = "none";
-	    } else {
-	        mySidebar.style.display = 'block';
-	        overlayBg.style.display = "block";
-	    }
-	}
-	// Close the sidebar with the close button
-	function w3_close() {
-	    mySidebar.style.display = "none";
-	    overlayBg.style.display = "none";
-	}
-	</script>
+  </div>
+  <script>
+  // Get the Sidebar
+  var mySidebar = document.getElementById("mySidebar");
+  // Get the DIV with overlay effect
+  var overlayBg = document.getElementById("myOverlay");
+  // Toggle between showing and hiding the sidebar, and add overlay effect
+  function w3_open() {
+      if (mySidebar.style.display === 'block') {
+          mySidebar.style.display = 'none';
+          overlayBg.style.display = "none";
+      } else {
+          mySidebar.style.display = 'block';
+          overlayBg.style.display = "block";
+      }
+  }
+  // Close the sidebar with the close button
+  function w3_close() {
+      mySidebar.style.display = "none";
+      overlayBg.style.display = "none";
+  }
+  </script>
 </body>
 </html>
