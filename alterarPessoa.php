@@ -11,7 +11,7 @@
 ?>
 <!DOCTYPE html>
 <html>
-<title>iDwell - Pessoas</title>
+<title>iDwell - Atualização de Cadastro da pessoa</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
@@ -32,7 +32,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="ppi-default-container ppi-default-row">
     <div class="ppi-default-col s4">
       <img src="./images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
-    </div>
+    </div>    
     <!-- Session menu -->
     <?php
     print("<div class='ppi-default-col s8 ppi-default-bar'>");
@@ -58,70 +58,77 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
 </nav>
 <!-- Overlay -->
-<div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- !PAGE CONTENT! -->
+  <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
+    <!-- Header -->
+    <header class="ppi-default-container" style="padding-top:22px">
+      <h5><b>Condomínios</b></h5>
+    </header>
+      <div class="ppi-default-container">
+      <!-- Middle Menu -->
+      <div class="middle-menu">
+          <input class="button-hover" id="tab1" type="button" name="tabs" checked>
+      <label for="tab1"><a href="./condominios.php">Listar</a></label>
+         <input class="checked" id="tab2" type="button" name="tabs">
+      <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
+    </div> 
+    <!-- White frame -->
+      <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
+        <h5>Atualização de castro do condomínio</h5>
+        <div class="ppi-default-row ">       
+		    <div class="div-form">
+  			<?php
+  				$Id=$_GET['Id'];
+  				require("conecta.inc.php");
+  				$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+  				$result=mysqli_query($ok, "select * from pessoas where idPessoa='$Id'") or die ("Não é possível retornar dados da pessoa!");
+  				$linha=mysqli_fetch_array($result);
+  			  $IdAlter=$linha["idPessoa"];
+          $Nome=$linha["nome"];
+          $Data=$linha["dataNasc"];
+          $Funcao=$linha['funcaoPessoa'];
+          $Cpf=$linha["cpf"];
+          $Endereco=$linha["endereco"];
+          $Comp=$linha['complemento'];
+          $Bairro=$linha["bairro"];
+          $Num=$linha['numero'];
+  			?>
+	      	<form action="confirmaAltpessoa.php" method="POST">
 
-<!-- !PAGE CONTENT! -->
-<div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
+	        <h5>Nome</h5>
+	        <input class="input-form" type="text" id="altNomePessoa" name="altNomePessoa" value="<?php print($Nome)?>">
 
-  <!-- Header -->
-  <header class="ppi-default-container" style="padding-top:22px">
-    <h5><b>Pessoas</b></h5>
-  </header>
-  <div class="ppi-default-container">
-  <!-- Middle Menu -->
-  <div class="middle-menu">
-      <input class="checked" id="tab1" type="button" name="tabs" checked>
-  <label for="tab1"><a href="./pessoas.php">Listar</a></label>
-     <input class="button-hover" id="tab2" type="button" name="tabs">
-  <label for="tab2"><a href="./cad_pessoa.php">Cadastrar</a></label> 
-</div> 
-  <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-    <h5>Perfil</h5>
-      <?php
-        $Id=$_GET['Id'];
-        require("conecta.inc.php");
-        $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-        $result=mysqli_query($ok, "select * from pessoas where idPessoa='$Id'") or die ("Não é possível retornar dados do condomínio!");
-        $linha=mysqli_fetch_array($result);
-        $Id=$linha["idPessoa"];
-        $Nome=$linha["nome"];
-        $Data=$linha["dataNasc"];
-        $Funcao=$linha['funcaoPessoa'];
-        $Cpf=$linha["cpf"];
-        $Endereco=$linha["endereco"];
-        $Comp=$linha['complemento'];
-        $Bairro=$linha["bairro"];
-        $Num=$linha['numero'];
-        $Imagem=$linha['fotoPessoa'];
-      ?>
-        <div class='ppi-default-row'>
-        <div class='ppi-default-col m2 text-center'>
-        <img class='ppi-default-circle' src=<?php print("./images/$Imagem")?> style='width:96px;height:96px'>
-        </div>
-        <div class='ppi-default-col m10 ppi-default-container'>
-        <h4><?php print("$Nome")?></h4>
-        <span class='ppi-default-opacity ppi-default-medium'> <?php print("$Funcao")?></span>
-        <div class="ppi-default-row ">
-        <BR>  <BR>
-        <h5><b>Data de nascimento:</b></h5>
-        <p><?php print("$Data")?></p>
-        <h5><b>CPF:</b></h5>
-        <p><?php print("$Cpf")?></p>
-        <h5><b>Bairro:</b></h5>
-        <p><?php print("$Bairro")?></p>
-        <h5><b>Endereço:</b></h5>
-        <p><?php print("$Endereco")?></p>
-        <h5><b>Complemento:</b></h5>
-        <p><?php print("$Comp")?></p>
-        <h5><b>Número:</b></h5>
-        <p><?php print("$Num")?></p>  
+          <h5>CPF</h5>
+          <input class="input-form" type="text" id="altCpfPessoa" name="altCpfPessoa" value="<?php print($Cpf)?>">
 
-        <font size='3'><a href='deletarPessoa.php?Id=<?php print($Id)?>'>Deletar | </a></font>
-        <font size='3'><a href='alterarPessoa.php?Id=<?php print($Id)?>'>Alterar</a></font>
-        </div>
-      </div>
-    </div>
-  </div>
+          <h5>Data de nascimento</h5>
+          <input class="input-form" type="text" id="dataNascPessoa" name="altDataNascPessoa" value="<?php print($Data)?>">
+
+          <h5>Endereço</h5>
+          <input class="input-form" type="text" id="altEndPessoa" name="altEndPessoa" value="<?php print($Endereco)?>">
+
+           <h5>Complemento</h5>
+          <input class="input-form" type="text" id="altCompPessoa" name="altCompPessoa" value="<?php print($Comp)?>">
+
+           <h5>Número</h5>
+          <input class="input-form" type="text" id="altNumPessoa" name="altNumPessoa" value="<?php print($Num)?>">
+
+           <h5>Bairro</h5>
+          <input class="input-form" type="text" id="altBairroPessoa" name="altBairroPessoa" placeholder="Digite o bairro" value="<?php print($Bairro)?>">
+
+	        <input type="hidden" name="altId" value="<?php echo $_GET['Id'];?>">
+
+	        <!-- <h5>Administradora</h5>
+	        <select id="adminCond" name="adminCond">
+	          <option value="imobbomfim">Imobiliária Bom fim</option>
+	          <option value="imobfacil">Imóbiliária Fácil</option>
+	        </select> -->
+	        <input class="ppi-default-button ppi-default-indigo" type="submit" value="Atualizar dados"></input>
+	      </form>
+	    </div>
+	  </div>
+  </div>    
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">
@@ -144,27 +151,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <p>Powered by Emilio de Oliveira e Bruno de Oliveira</a></p>
   </footer>
   <!-- End page content -->
-  </div>
-  <script>
-  // Get the Sidebar
-  var mySidebar = document.getElementById("mySidebar");
-  // Get the DIV with overlay effect
-  var overlayBg = document.getElementById("myOverlay");
-  // Toggle between showing and hiding the sidebar, and add overlay effect
-  function w3_open() {
-      if (mySidebar.style.display === 'block') {
-          mySidebar.style.display = 'none';
-          overlayBg.style.display = "none";
-      } else {
-          mySidebar.style.display = 'block';
-          overlayBg.style.display = "block";
-      }
-  }
-  // Close the sidebar with the close button
-  function w3_close() {
-      mySidebar.style.display = "none";
-      overlayBg.style.display = "none";
-  }
-  </script>
+	</div>
+	<script>
+	// Get the Sidebar
+	var mySidebar = document.getElementById("mySidebar");
+	// Get the DIV with overlay effect
+	var overlayBg = document.getElementById("myOverlay");
+	// Toggle between showing and hiding the sidebar, and add overlay effect
+	function w3_open() {
+	    if (mySidebar.style.display === 'block') {
+	        mySidebar.style.display = 'none';
+	        overlayBg.style.display = "none";
+	    } else {
+	        mySidebar.style.display = 'block';
+	        overlayBg.style.display = "block";
+	    }
+	}
+	// Close the sidebar with the close button
+	function w3_close() {
+	    mySidebar.style.display = "none";
+	    overlayBg.style.display = "none";
+	}
+	</script>
 </body>
 </html>
