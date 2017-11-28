@@ -59,7 +59,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </nav>
 <!-- Overlay -->
 <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
 <!-- !PAGE CONTENT! -->
 <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
 
@@ -77,13 +76,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </div> 
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
     <h5>Condomínios cadastrados</h5>
-    
     <?php
       header('Content-Type: text/html; charset=utf-8');
       require("conecta.inc.php");  //inclui o arquivo para conexão
       $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-      $resultado=mysqli_query($ok, "Select * from condominios;");
-    
+      $resultado=mysqli_query($ok, "Select * from condominios;");  
       while ($linha=mysqli_fetch_array($resultado)) {
         $Id=$linha["idCondominio"];
         $Nome=$linha["nomeCondominio"];
@@ -101,7 +98,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         print("</div>");
         print("</div>"); }
       ?>
-
   </div>
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
