@@ -1,30 +1,30 @@
+<?php  
+  session_start();
+  if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    unset($_SESSION['login']);
+    unset($_SESSION['senha']);
+    header('location:login.php');
+  }
+  $logado = $_SESSION['login'];
+  $usuario = $_SESSION['login'];
+?>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-    <?php  
-      session_start();
-      if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-      {
-        unset($_SESSION['login']);
-        unset($_SESSION['senha']);
-        header('location:login.php');
-        }
-      $logado = $_SESSION['login'];
-      $usuario = $_SESSION['login'];
-    ?>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>iDwell - Sistema de administração de imóveis</title>
-		<link rel="stylesheet" href="css/ppi-default.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs"/>
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" href="css/style.css">
-		<script src="js/modernizr.custom.js"></script>
-	</head>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>iDwell - Sistema de administração de imóveis</title>
+	<link rel="stylesheet" href="css/ppi-default.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs"/>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr.custom.js"></script>
+</head>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>

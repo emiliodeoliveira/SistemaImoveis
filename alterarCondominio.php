@@ -1,19 +1,19 @@
+<?php  
+  session_start();
+  if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    unset($_SESSION['login']);
+    unset($_SESSION['senha']);
+    header('location:login.php');
+  }
+  $logado = $_SESSION['login'];
+  $usuario = $_SESSION['login'];
+?>
 <!DOCTYPE html>
 <html>
 <title>iDwell - Atualização de Cadastro do condomínio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php  
-      session_start();
-      if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-      {
-        unset($_SESSION['login']);
-        unset($_SESSION['senha']);
-        header('location:login.php');
-        }
-      $logado = $_SESSION['login'];
-      $usuario = $_SESSION['login'];
-    ?>
 <link rel="stylesheet" href="css/ppi-default.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -78,19 +78,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h5>Atualização de castro do condomínio</h5>
         <div class="ppi-default-row ">       
 		    <div class="div-form">
-			<?php
-				$Id=$_GET['Id'];
-				require("conecta.inc.php");
-				$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-				$result=mysqli_query($ok, "select * from condominios where idCondominio='$Id'") or die ("Não é possível retornar dados do condomínio!");
-				$linha=mysqli_fetch_array($result);
-			        $IdAlter=$linha["idCondominio"];
-			        $Nome=$linha["nomeCondominio"];
-			        $Endereco=$linha["endereco"];
-					$Comp=$linha['complemento'];
-					$Bairro=$linha["bairro"];
-					$Num=$linha['numero'];
-			?>
+  			<?php
+  				$Id=$_GET['Id'];
+  				require("conecta.inc.php");
+  				$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+  				$result=mysqli_query($ok, "select * from condominios where idCondominio='$Id'") or die ("Não é possível retornar dados do condomínio!");
+  				$linha=mysqli_fetch_array($result);
+  			        $IdAlter=$linha["idCondominio"];
+  			        $Nome=$linha["nomeCondominio"];
+  			        $Endereco=$linha["endereco"];
+  					$Comp=$linha['complemento'];
+  					$Bairro=$linha["bairro"];
+  					$Num=$linha['numero'];
+  			?>
 	      	<form action="confirmaAltCondominio.php" method="POST">
 
 	        <h5>Nome</h5>

@@ -1,19 +1,19 @@
+<?php  
+  session_start();
+  if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    unset($_SESSION['login']);
+    unset($_SESSION['senha']);
+    header('location:login.php');
+  }
+  $logado = $_SESSION['login'];
+  $usuario = $_SESSION['login'];
+?>
 <!DOCTYPE html>
 <html>
 <title>iDwell - Atualização de Cadastro do condomínio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php  
-      session_start();
-      if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-      {
-        unset($_SESSION['login']);
-        unset($_SESSION['senha']);
-        header('location:login.php');
-        }
-      $logado = $_SESSION['login'];
-      $usuario = $_SESSION['login'];
-    ?>
 <link rel="stylesheet" href="css/ppi-default.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

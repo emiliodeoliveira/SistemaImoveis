@@ -1,17 +1,17 @@
+<?php  
+  session_start();
+  if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    unset($_SESSION['login']);
+    unset($_SESSION['senha']);
+    header('location:login.php');
+  }
+  $logado = $_SESSION['login'];
+  $usuario = $_SESSION['login'];
+?>
 <!DOCTYPE html>
 <html>
 <title>iDwell - Sobre</title>
-    <?php  
-      session_start();
-      if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-      {
-        unset($_SESSION['login']);
-        unset($_SESSION['senha']);
-        header('location:login.php');
-        }
-      $logado = $_SESSION['login'];
-      $usuario = $_SESSION['login'];
-    ?>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
