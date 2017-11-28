@@ -41,6 +41,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     print("<span><font size='1'><a href='./logout.php'>Logout</a></font></span></h6><br>");
     print("</div>");
     ?>
+    
   </div>
   <hr>
   <!-- Resposive menu -->
@@ -85,14 +86,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       while ($linha=mysqli_fetch_array($resultado)) {
         $Id=$linha["idPessoa"];
         $Nome=$linha["nome"];
-        $Imagem=$linha["fotoPessoa"];      
+        $Imagem=$linha["fotoPessoa"];    
+        $Funcao=$linha["funcaoPessoa"];  
         print("<li class='ppi-default-padding-16'>");
         print("<img src='./images/$Imagem' class='ppi-default-left ppi-default-circle ppi-default-margin-right' style='width:35px'>");
-        print("<span class='ppi-default-xlarge'>$Nome</span><span class='ppi-default-opacity ppi-default-medium'> Administrador</span><br>");
+        print("<span class='ppi-default-xlarge'>$Nome</span><span class='ppi-default-opacity ppi-default-medium'> $Funcao</span><br>");
         print("</li>");
-        print("</ul>");
+        /*print("</ul>"); --- corrigida quebra da lista*/
       }
   ?>
+  </ul>
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">
