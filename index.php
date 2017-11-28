@@ -67,59 +67,46 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </nav>
 <!-- Overlay -->
 <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
 <!-- !PAGE CONTENT! -->
 <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
 <header class="ppi-default-container" style="padding-top:22px">
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="container">	
-			<header>
-				<h1>iDwell<span>Sistema de administração de imóveis para fins acadêmicos</span></h1>	
-			</header>
-			<div class="main clearfix">
-				<nav id="menu" class="nav">					
-					<ul>
-						<li>
-							<a href="./administradoras.php">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-portfolio"></i>
-								</span>
-								<span>Administradoras</span>
-							</a>
-						</li>
-						<li>
-							<a href="./condominios.php">
-								<span class="icon"> 
-									<i aria-hidden="true" class="icon-home"></i>
-								</span>
-								<span>Condomínios</span>
+<div class="container">	
+	<header>
+	<h1>iDwell<span>Sistema de administração de imóveis para fins acadêmicos</span></h1>	
+	</header>
+	<div class="main clearfix">
+		<nav id="menu" class="nav">					
+			<ul>
+				<li>
+					<a href="./administradoras.php">
+						<span class="icon">
+						<i aria-hidden="true" class="icon-portfolio"></i>
+						</span>
+						<span>Administradoras</span>
+						</a>
+					</li>
+					<li>
+						<a href="./condominios.php">
+							<span class="icon"> 
+							<i aria-hidden="true" class="icon-home"></i>
+							</span>
+							<span>Condomínios</span>
 							</a>
 						</li>
 						<li>
 							<a href="./lotes.php">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-portfolio"></i>
-								</span>
-								<span>Lotes</span>
+							<span class="icon">
+							<i aria-hidden="true" class="icon-portfolio"></i>
+							</span>
+							<span>Lotes</span>
 							</a>
 						</li>
 						<li>
 							<a href="./pessoas.php">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-team"></i>
-								</span>
-								<span>Pessoas</span>
+							<span class="icon">
+							<i aria-hidden="true" class="icon-team"></i>
+							</span>
+							<span>Pessoas</span>
 							</a>
 						</li>
 						<li>
@@ -132,19 +119,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						</li>
 						<li>
 							<a href="./sobre.php">
-								<span class="icon">
-									<i aria-hidden="true" class="icon-contact"></i>
-								</span>
-								<span>Sobre o trabalho</span>
+							<span class="icon">
+							<i aria-hidden="true" class="icon-contact"></i>
+							</span>
+							<span>Sobre o trabalho</span>
 							</a>
 						</li>
 					</ul>
 				</nav>
 			</div>
-
-	
-
-
 		<script>
 			//  The function to change the class
 			var changeClass = function (r,className1,className2) {
@@ -171,9 +154,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
 					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
 				}
-
-
-
+		</script>
+		<script>
+			// Get the Sidebar
+			var mySidebar = document.getElementById("mySidebar");
+			// Get the DIV with overlay effect
+			var overlayBg = document.getElementById("myOverlay");
+			// Toggle between showing and hiding the sidebar, and add overlay effect
+			function w3_open() {
+			    if (mySidebar.style.display === 'block') {
+			        mySidebar.style.display = 'none';
+			        overlayBg.style.display = "none";
+			    } else {
+			        mySidebar.style.display = 'block';
+			        overlayBg.style.display = "block";
+			    }
+			}
+			// Close the sidebar with the close button
+			function w3_close() {
+			    mySidebar.style.display = "none";
+			    overlayBg.style.display = "none";
+			}
 		</script>
 	</body>
 </html>
