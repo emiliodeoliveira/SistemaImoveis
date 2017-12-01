@@ -1,17 +1,6 @@
-<?php  
-  session_start();
-  if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-  {
-    unset($_SESSION['login']);
-    unset($_SESSION['senha']);
-    header('location:login.php');
-  }
-  $logado = $_SESSION['login'];
-  $usuario = $_SESSION['login'];
-?>
 <!DOCTYPE html>
 <html>
-<title>iDwell - Lotes</title>
+<title>iDwell - Cadastro de lotes</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
@@ -24,7 +13,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <body class="ppi-default-light-grey">
 <!-- Top container -->
 <div class="ppi-default-bar ppi-default-top ppi-default-teal ppi-default-large" style="z-index:4">
-  <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="ppi-default-bar-item ppi-default-left">iDwell</span>
 </div>
 <!-- Sidebar/menu -->
@@ -50,8 +39,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding-16 ppi-default-hide-large ppi-default-dark-grey ppi-default-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar menu</a>
     <a href="./index.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
     <a href="./administradoras.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bank fa-fw"></i>  Administradoras</a>
-    <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Condomínios</a>
-    <a href="./lotes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-users fa-fw"></i>  Lotes</a>
+    <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-building fa-fw"></i>  Condomínios</a>
+    <a href="./lotes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-users fa-fw"></i>  Lotes</a>
     <a href="./pessoas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-user fa-fw"></i>  Pessoas</a>
     <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-search fa-fw"></i>  Consultas</a>
     <a href="./sobre.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bell fa-fw"></i>  Sobre</a><br><br>
@@ -60,84 +49,69 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Overlay -->
 <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- Page Content -->
+<!-- !PAGE CONTENT! -->
 <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
   <header class="ppi-default-container" style="padding-top:22px">
-    <h5><b>Lotes</b></h5>
+    <h5><b>Condomínios</b></h5>
   </header>
- <div class="ppi-default-container">
-   <!-- Middle Menu -->
+  <div class="ppi-default-container">
+  <!-- Middle Menu -->
   <div class="middle-menu">
-      <input id="tab1" type="radio" name="tabs" checked>
-  <label for="tab1"><a href="./lotes.php">Listar</a></label>
-     <input id="tab2" type="radio" name="tabs">
-  <label for="tab2"><a href="./cad_lotes.php">Cadastrar</a></label> 
+      <input class="checked" id="tab1" type="button" name="tabs" >
+  <label for="tab1"><a href="./administradoras.php">Listar</a></label>
+     <input class="button-hover" id="tab2" type="button" name="tabs" checked>
+  <label for="tab2"><a href="./cad_administradora.php">Cadastrar</a></label> 
 </div> 
-<div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-<div class='ppi-default-row'>
-
-
-
-
-    <h5>Lotes cadastrados</h5>
-    <table class="ppi-default-table ppi-default-striped ppi-default-bordered ppi-default-border ppi-default-hoverable ppi-default-white">
-
+  <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
+    <h5>Administradoras cadastradas</h5>
     <?php
-
-      require("conecta.inc.php");  //inclui o arquivo para conexão
-      $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-      $resultado=mysqli_query($ok, "Select * from lotes;");
-      while ($linha=mysqli_fetch_array($resultado)) {
-        $Desc=$linha["descricao"];
-        $Tam=$linha["tamanho"]; 
-        print("<tr>");
-        print("<td>$Desc</td>");
-        print("<td>$Tam m²</td>");
-        print("</tr>");
-
-       }
-     ?>
-     </table><br>
-     </table><br>
-  </div>
- </div>
-   </div>
-
-
-
+		$desc=$_POST['descLote'];
+    $tam=$_POST['tamLote'];
+    $adm=$_POST['adminLote'];
+    $prop=$_POST['propLote'];
+    
+		if ($desc==""  or $tam=="" or $adm=="" or $prop=="")
+			print("Faltou preencher algum campo...");
+		else
+		  {
+			require("conecta.inc.php");
+			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+			print("Inserindo a administradora:<p>");
+			mysqli_query($ok, "insert into lotes (descricao, tamanho, idPessoa, idAdmin) values ('$desc', '$tam', '$adm', '$prop')") or die ("Não é possível inserir lote!");
+			print("Lote inserido com sucesso: <b></b>");
+		  }
+	?>
+	<p><a href="./lotes.php">Mostrar</a></p>
+	</div>
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>IDwell</h4>
     <p>Powered by Emilio de Oliveira e Bruno de Oliveira</a></p>
   </footer>
   <!-- End page content -->
-</div>
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
-    }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-}
-</script>
-
+	</div>
+	<script>
+	// Get the Sidebar
+	var mySidebar = document.getElementById("mySidebar");
+	// Get the DIV with overlay effect
+	var overlayBg = document.getElementById("myOverlay");
+	// Toggle between showing and hiding the sidebar, and add overlay effect
+	function w3_open() {
+	    if (mySidebar.style.display === 'block') {
+	        mySidebar.style.display = 'none';
+	        overlayBg.style.display = "none";
+	    } else {
+	        mySidebar.style.display = 'block';
+	        overlayBg.style.display = "block";
+	    }
+	}
+	// Close the sidebar with the close button
+	function w3_close() {
+	    mySidebar.style.display = "none";
+	    overlayBg.style.display = "none";
+	}
+	</script>
 </body>
 </html>
