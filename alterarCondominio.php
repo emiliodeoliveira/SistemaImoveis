@@ -84,12 +84,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   				$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
   				$result=mysqli_query($ok, "select * from condominios where idCondominio='$Id'") or die ("Não é possível retornar dados do condomínio!");
   				$linha=mysqli_fetch_array($result);
-  			        $IdAlter=$linha["idCondominio"];
-  			        $Nome=$linha["nomeCondominio"];
-  			        $Endereco=$linha["endereco"];
-  					$Comp=$linha['complemento'];
-  					$Bairro=$linha["bairro"];
-  					$Num=$linha['numero'];
+  			  $IdAlter=$linha["idCondominio"];
+  			  $Nome=$linha["nomeCondominio"];
+  			  $Endereco=$linha["endereco"];
+  				$Comp=$linha['complemento'];
+  				$Bairro=$linha["bairro"];
+  				$Num=$linha['numero'];
+
   			?>
 	      	<form action="confirmaAltCondominio.php" method="POST">
 
@@ -110,11 +111,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 	        <input type="hidden" name="altId" value="<?php echo $_GET['Id'];?>">
 
-	        <!-- <h5>Administradora</h5>
-	        <select id="adminCond" name="adminCond">
-	          <option value="imobbomfim">Imobiliária Bom fim</option>
-	          <option value="imobfacil">Imóbiliária Fácil</option>
-	        </select> -->
 	        <input class="ppi-default-button ppi-default-indigo" type="submit" value="Atualizar dados"></input>
 	      </form>
 	    </div>

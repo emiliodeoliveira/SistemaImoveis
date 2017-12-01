@@ -89,7 +89,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         $Imagem=$linha["imgAdmin"];    
         print("<li class='ppi-default-padding-16'>");
         print("<img src='./images/$Imagem' class='ppi-default-left ppi-default-circle ppi-default-margin-right' style='width:35px'>");
-        print("<span class='ppi-default-xlarge'>$Nome</span><br>");
+        print("<span class='ppi-default-xlarge'><a href='visualizaAdministradora.php?Id=$Id'>$Nome</a></span><br>");
         print("</li>");
         /*print("</ul>"); --- corrigida quebra da lista*/
       }

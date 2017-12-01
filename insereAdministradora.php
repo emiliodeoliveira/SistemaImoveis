@@ -73,6 +73,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     $end=$_POST['endAdmin'];
     $comp=$_POST['compAdmin'];
 		$num=$_POST['numAdmin'];	
+    $Adm=$_POST['adminCond'];
     $target_dir = "./images";    
     $target_path = "./images/";
     $target_file = $target_path . basename ($_FILES['imgAdmin']['name']);
@@ -81,7 +82,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
             $image   = basename($_FILES['imgAdmin']['name']);
     }
-		if ($nome==""  or $razao=="" or $cnpj=="" or $end=="" or $comp=="" or $num=="")
+		if ($nome==""  or $razao=="" or $cnpj=="" or $end=="" or $comp=="" or $num=="" or $Adm=='')
 			print("Faltou preencher algum campo...");
 		else
 		  {

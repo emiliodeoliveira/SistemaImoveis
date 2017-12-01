@@ -83,6 +83,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		$end=$_POST['endCond'];
 		$comp=$_POST['compCond'];
 		$num=$_POST['numCond'];		
+    $adm=$_POST['adminCond'];
+    $sind=$_POST['sindCond'];
     $target_dir = "./images";    
     $target_path = "./images/";
     $target_file = $target_path . basename ($_FILES['imgCond']['name']);
@@ -91,14 +93,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
             $image   = basename($_FILES['imgCond']['name']);
     }
-		if ($nome=="" or $bairro=="" or $end=="" or $comp=="" or $num=="")
+		if ($nome=="" or $bairro=="" or $end=="" or $comp=="" or $num=="" or $adm=="" or $sind=="")
 			print("Faltou preencher algum campo...");
 		else
 		  {
 			require("conecta.inc.php");
 			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
 			print("Inserindo o condomínio:<p>");
-			mysqli_query($ok, "insert into condominios (bairro, endereco, complemento, numero, nomeCondominio, imgId) values ('$bairro', '$end', '$comp', '$num', '$nome', '$image')") or die ("Não é possível inserir condomínio!");
+			mysqli_query($ok, "insert into condominios (bairro, endereco, complemento, numero, nomeCondominio, idAdmin, idPessoa, imgId) values ('$bairro', '$end', '$comp', '$num', '$nome', '$adm', '$sind' , '$image')") or die ("Não é possível inserir condomínio!");
 			print("condomínio inserido com sucesso: <b>$nome</b>");
 		  }
 	?>

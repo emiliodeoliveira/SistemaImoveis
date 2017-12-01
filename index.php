@@ -112,7 +112,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						<li>
 							<a href="./consultas.php">
 								<span class="icon">
-									<i aria-hidden="true" class="icon-team"></i>
+									<i aria-hidden="true" class="icon-services"></i>
 								</span>
 								<span>Consultas</span>
 							</a>

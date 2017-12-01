@@ -96,11 +96,34 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
          <h5>Número</h5>
         <input class="input-form" type="text" id="numCond" name="numCond" placeholder="Número do condomínio">
 
-        <!-- <h5>Administradora</h5>
+        <h5>Administradora</h5>
         <select id="adminCond" name="adminCond">
-          <option value="imobbomfim">Imobiliária Bom fim</option>
-          <option value="imobfacil">Imóbiliária Fácil</option>
-        </select> -->
+
+        <?php
+              require("conecta.inc.php");  //inclui o arquivo para conexão
+              $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+              $resultado=mysqli_query($ok, "Select * from administradoras;");  
+              while ($linha=mysqli_fetch_array($resultado)) {
+                $IdAdminCond=$linha["idAdmin"];
+                $Nome=$linha["nomeAdministradora"];   
+                print("<option value='$IdAdminCond'>$Nome</option>");
+              }
+         ?>
+        </select>
+        <h5>Síndico</h5>
+        <select id="sindCond" name="sindCond">
+        <?php
+              require("bdQuery.php");  //inclui o arquivo para conexão
+              $valida = consulta_bd() or die ("Não é possível conectar-se ao servidor.");
+              $resultado=mysqli_query($valida, "Select * from pessoas;");  
+              while ($linha=mysqli_fetch_array($resultado)) {
+                $IdSindico=$linha["idPessoa"];
+                $Nome=$linha["nome"];   
+                print("<option value='$IdSindico'>$Nome</option>");
+              }
+         ?>
+        </select>
+
         <div class="fileContainer">
           <label class="fileContainer">
             Clique aqui para adicionar a foto!

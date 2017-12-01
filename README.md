@@ -1,6 +1,10 @@
 # iDwell beta
 Sistema de administração de imóveis criado por Emilio de Oliveira e Bruno de Oliveira.
 
+Versão 0.9.1
+- Adicionada visualização de perfil de admnistradoras.
+- Correção de erros na página "Home".
+
 Versão 0.9
 - Adicionada funcionalidade das administradoras.
 - Remodelagem do banco de dados, com chaves estrangeiras.
@@ -45,6 +49,12 @@ Versão 0.6
 
 Versão 0.5.2
 - Adicionadas funções de cadastro de clientes e condomínios.
+
+# Futuras funcionalidades:
+- Busca: no momento a busca está indisponível, pois está sendo criado um sistema de consultas utilizando as chaves estrangeiras.
+- Cadastro de usuários: os usuários nesse momento estão sendo adicionados pelo administrador do sistema. Futuramente será habilitado o cadastro.
+
+
 
 
 
