@@ -11,7 +11,7 @@
 ?>
 <!DOCTYPE html>
 <html>
-<title>iDwell - Condomínios</title>
+<title>iDwell - Cadastro de administradora</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
@@ -32,7 +32,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="ppi-default-container ppi-default-row">
     <div class="ppi-default-col s4">
       <img src="./images/avatar2.png" class="ppi-default-circle ppi-default-margin-right" style="width:46px">
-    </div>
+    </div>    
     <!-- Session menu -->
     <?php
     print("<div class='ppi-default-col s8 ppi-default-bar'>");
@@ -42,63 +42,77 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     ?>
   </div>
   <hr>
-  <!-- Resposive menu -->
+    <!-- Resposive menu -->
   <div class="ppi-default-container">
     <h5>Menu</h5>
   </div>
   <div class="ppi-default-bar-block">
     <a href="#" class="ppi-default-bar-item ppi-default-button ppi-default-padding-16 ppi-default-hide-large ppi-default-dark-grey ppi-default-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Fechar menu</a>
     <a href="./index.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-home fa-fw"></i>  Home</a>
-    <a href="./administradoras.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bank fa-fw"></i>  Administradoras</a>
-    <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-building fa-fw"></i>  Condomínios</a>
+    <a href="./administradoras.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding ppi-default-blue"><i class="fa fa-bank fa-fw"></i>  Administradoras</a>
+    <a href="./condominios.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-building fa-fw"></i>  Condomínios</a>
     <a href="./lotes.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-users fa-fw"></i>  Lotes</a>
-    <a href="./pessoas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-user fa-fw"></i>  Pessoas</a>
+    <a href="./pessoas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding "><i class="fa fa-user fa-fw"></i>  Pessoas</a>
     <a href="./consultas.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-search fa-fw"></i>  Consultas</a>
     <a href="./sobre.php" class="ppi-default-bar-item ppi-default-button ppi-default-padding"><i class="fa fa-bell fa-fw"></i>  Sobre</a><br><br>
   </div>
 </nav>
 <!-- Overlay -->
-<div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-<!-- !PAGE CONTENT! -->
-<div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
+  <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- !PAGE CONTENT! -->
+  <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
+    <!-- Header -->
+    <header class="ppi-default-container" style="padding-top:22px">
+      <h5><b>Administradoras</b></h5>
+    </header>
+      <div class="ppi-default-container">
+      <!-- Middle Menu -->
+      <div class="middle-menu">
+          <input class="button-hover" id="tab1" type="button" name="tabs" checked>
+      <label for="tab1"><a href="./administradoras.php">Listar</a></label>
+         <input class="checked" id="tab2" type="button" name="tabs">
+      <label for="tab2"><a href="./cad_administradora.php">Cadastrar</a></label> 
+    </div> 
+    <!-- White frame -->
+      <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
+        <h5>Cadastro de administradora</h5>
+        <div class="ppi-default-row ">
+          
+    <div class="div-form">
 
-  <!-- Header -->
-  <header class="ppi-default-container" style="padding-top:22px">
-    <h5><b>Condomínios</b></h5>
-  </header>
-  <div class="ppi-default-container">
-  <!-- Middle Menu -->
-  <div class="middle-menu">
-      <input class="checked" id="tab1" type="button" name="tabs" checked>
-  <label for="tab1"><a href="./condominios.php">Listar</a></label>
-     <input class="button-hover" id="tab2" type="button" name="tabs">
-  <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
-</div> 
-  <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-    <h5>Condomínios cadastrados</h5>
-    <?php
-      header('Content-Type: text/html; charset=utf-8');
-      require("conecta.inc.php");  //inclui o arquivo para conexão
-      $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-      $resultado=mysqli_query($ok, "Select * from condominios;");  
-      while ($linha=mysqli_fetch_array($resultado)) {
-        $Id=$linha["idCondominio"];
-        $Nome=$linha["nomeCondominio"];
-        $Endereco=$linha["endereco"];
-        $Imagem=$linha["imgId"];
-        print("<div class='ppi-default-row'>");
-        print("<div class='ppi-default-col m2 text-center'>");
-        print("<img class='ppi-default-circle' src='./images/$Imagem' style='width:96px;height:96px'>");
-        print("</div>");
-        print("<div class='ppi-default-col m10 ppi-default-container'>");
-        print("<h4><a href='visualizaCondominio.php?Id=$Id'>$Nome</a></h4>");
-        print("<p>$Endereco</p>");
-        print("<font size='1'><a href='deletarCondominio.php?Id=$Id'>Deletar | </a></font>");
-        print("<font size='1'><a href='alterarCondominio.php?Id=$Id'>Alterar</a></font>"); 
-        print("</div>");
-        print("</div>"); }
-      ?>
+      <form action="insereAdministradora.php" method="POST" enctype="multipart/form-data">
+        <h5>Nome</h5>
+        <input class="input-form" type="text" id="nomeAdmin" name="nomeAdmin" placeholder="Digite o nome da administradora">
+
+        <h5>Razão Social</h5>
+        <input class="input-form" type="text" id="razaoAdmin" name="razaoAdmin" placeholder="Razão social">
+
+        <h5>CNPJ</h5>
+        <input class="input-form" type="text" id="cnpjAdmin" name="cnpjAdmin" placeholder="CNPJ da administradora">
+
+        <h5>Endereço</h5>
+        <input class="input-form" type="text" id="endAdmin" name="endAdmin" placeholder="Endereço da administradora">
+
+         <h5>Complemento</h5>
+        <input class="input-form" type="text" id="compAdmin" name="compAdmin" placeholder="Complemento do endereço">
+
+         <h5>Número</h5>
+        <input class="input-form" type="text" id="numAdmin" name="numAdmin" placeholder="Número do endereço">
+
+        <div class="fileContainer">
+          <label class="fileContainer">
+            Clique aqui para adicionar a foto!
+            <input type="file" name="imgAdmin" id="imgAdmin"/>
+          </label>
+        </div>    
+        <input class="ppi-default-button ppi-default-indigo" type="submit" value="Enviar"></input>
+      </form>
+    </div>
   </div>
+
+
+    </div>
+    
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">

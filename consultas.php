@@ -12,17 +12,6 @@
 <!DOCTYPE html>
 <html>
 <title>iDwell- Consultas</title>
-    <?php  
-      session_start();
-      if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-      {
-        unset($_SESSION['login']);
-        unset($_SESSION['senha']);
-        header('location:login.php');
-        }
-      $logado = $_SESSION['login'];
-      $usuario = $_SESSION['login'];
-    ?>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
@@ -83,7 +72,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5>Resultados:</h5>
   <form class="ppi-default-container">
       <p>
-      <input class="ppi-default-input" placeholder="Pesquisar..." type="text">
+      <input class="ppi-default-input" placeholder="Digite a sua busca aqui..." type="text">
     </form> 
       <div class="ppi-default-container">
       <h5>Condomínios</h5>

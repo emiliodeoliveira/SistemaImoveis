@@ -41,9 +41,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     print("<span><font size='1'><a href='./logout.php'>Logout</a></font></span></h6><br>");
     print("</div>");
     ?>
+    
   </div>
   <hr>
-  <!-- Resposive menu -->
+    <!-- Resposive menu -->
   <div class="ppi-default-container">
     <h5>Menu</h5>
   </div>
@@ -73,17 +74,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="middle-menu">
       <input class="checked" id="tab1" type="button" name="tabs" checked>
   <label for="tab1"><a href="./administradoras.php">Listar</a></label>
-    <!-- <input class="button-hover" id="tab2" type="button" name="tabs">
-  <label for="tab2"><a href="./cad_pessoa.php">Cadastrar</a></label> -->
+     <input class="button-hover" id="tab2" type="button" name="tabs">
+  <label for="tab2"><a href="./cad_administradora.php">Cadastrar</a></label> 
 </div> 
     <ul class="ppi-default-ul ppi-default-card-4 ppi-default-white">
-      <li class="ppi-default-padding-16">
-        <img src="./images/avatar2.png" class="ppi-default-left ppi-default-circle ppi-default-margin-right" style="width:35px">
-        <span class="ppi-default-xlarge">Auxiliadora predial</span><br>
-      </li>
-
-    </ul>
-    
+     <?php
+      header('Content-Type: text/html; charset=utf-8');
+      require("conecta.inc.php");  //inclui o arquivo para conexão
+      $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+      $resultado=mysqli_query($ok, "Select * from administradoras;");
+      while ($linha=mysqli_fetch_array($resultado)) {
+        $Id=$linha["idAdmin"];
+        $Nome=$linha["nomeAdministradora"];
+        $Imagem=$linha["imgAdmin"];    
+        print("<li class='ppi-default-padding-16'>");
+        print("<img src='./images/$Imagem' class='ppi-default-left ppi-default-circle ppi-default-margin-right' style='width:35px'>");
+        print("<span class='ppi-default-xlarge'>$Nome</span><br>");
+        print("</li>");
+        /*print("</ul>"); --- corrigida quebra da lista*/
+      }
+  ?>
+  </ul>
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">

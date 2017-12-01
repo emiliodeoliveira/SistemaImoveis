@@ -1,17 +1,6 @@
-<?php  
-  session_start();
-  if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-  {
-    unset($_SESSION['login']);
-    unset($_SESSION['senha']);
-    header('location:login.php');
-  }
-  $logado = $_SESSION['login'];
-  $usuario = $_SESSION['login'];
-?>
 <!DOCTYPE html>
 <html>
-<title>iDwell - Condomínios</title>
+<title>iDwell - Administradoras</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/ppi-default.css">
@@ -59,6 +48,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </nav>
 <!-- Overlay -->
 <div class="ppi-default-overlay ppi-default-hide-large ppi-default-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
 <!-- !PAGE CONTENT! -->
 <div class="ppi-default-main" style="margin-left:300px;margin-top:43px;">
 
@@ -69,52 +59,41 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="ppi-default-container">
   <!-- Middle Menu -->
   <div class="middle-menu">
-      <input class="checked" id="tab1" type="button" name="tabs" checked>
-  <label for="tab1"><a href="./condominios.php">Listar</a></label>
-     <input class="button-hover" id="tab2" type="button" name="tabs">
-  <label for="tab2"><a href="./cad_condominio.php">Cadastrar</a></label> 
+      <input class="checked" id="tab1" type="button" name="tabs" >
+  <label for="tab1"><a href="./administradoras.php">Listar</a></label>
+     <input class="button-hover" id="tab2" type="button" name="tabs" checked>
+  <label for="tab2"><a href="./cad_administradora.php">Cadastrar</a></label> 
 </div> 
   <div class="ppi-default-container ppi-default-ul ppi-default-card-4 ppi-default-white">
-    <h5>Condomínios cadastrados</h5>
+    <h5>Administradoras cadastradas</h5>
     <?php
-      header('Content-Type: text/html; charset=utf-8');
-      require("conecta.inc.php");  //inclui o arquivo para conexão
-      $ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
-      $resultado=mysqli_query($ok, "Select * from condominios;");  
-      while ($linha=mysqli_fetch_array($resultado)) {
-        $Id=$linha["idCondominio"];
-        $Nome=$linha["nomeCondominio"];
-        $Endereco=$linha["endereco"];
-        $Imagem=$linha["imgId"];
-        print("<div class='ppi-default-row'>");
-        print("<div class='ppi-default-col m2 text-center'>");
-        print("<img class='ppi-default-circle' src='./images/$Imagem' style='width:96px;height:96px'>");
-        print("</div>");
-        print("<div class='ppi-default-col m10 ppi-default-container'>");
-        print("<h4><a href='visualizaCondominio.php?Id=$Id'>$Nome</a></h4>");
-        print("<p>$Endereco</p>");
-        print("<font size='1'><a href='deletarCondominio.php?Id=$Id'>Deletar | </a></font>");
-        print("<font size='1'><a href='alterarCondominio.php?Id=$Id'>Alterar</a></font>"); 
-        print("</div>");
-        print("</div>"); }
-      ?>
-  </div>
-  <br>
-  <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
-    <div class="ppi-default-row">
-      <div class="ppi-default-container ppi-default-third">
-        <h5 class="ppi-default-bottombar ppi-default-border-green">Demográfico</h5>
-        <p>Lotes</p>
-        <p>Cidades</p>
-        <p>Estados</p>
-      </div>
-      <div class="ppi-default-container ppi-default-third">
-        <h5 class="ppi-default-bottombar ppi-default-border-red">Clientes</h5>
-        <p>Cadastrados</p>
-        <p>Ativos</p> 
-      </div>
-    </div>
-  </div>
+		$nome=$_POST['nomeAdmin'];
+    $razao=$_POST['razaoAdmin'];
+    $cnpj=$_POST['cnpjAdmin'];
+    $end=$_POST['endAdmin'];
+    $comp=$_POST['compAdmin'];
+		$num=$_POST['numAdmin'];	
+    $target_dir = "./images";    
+    $target_path = "./images/";
+    $target_file = $target_path . basename ($_FILES['imgAdmin']['name']);
+        //if the image is moved to the images folder , do the insert
+        if (move_uploaded_file($_FILES['imgAdmin']['tmp_name'], $target_file)) {
+
+            $image   = basename($_FILES['imgAdmin']['name']);
+    }
+		if ($nome==""  or $razao=="" or $cnpj=="" or $end=="" or $comp=="" or $num=="")
+			print("Faltou preencher algum campo...");
+		else
+		  {
+			require("conecta.inc.php");
+			$ok = conecta_bd() or die ("Não é possível conectar-se ao servidor.");
+			print("Inserindo a administradora:<p>");
+			mysqli_query($ok, "insert into administradoras (nomeAdministradora, razaoSocial, cnpj, endereco, complemento, numero, imgAdmin) values ('$nome', '$razao', '$cnpj', '$end', '$comp', '$num', '$image')") or die ("Não é possível inserir condomínio!");
+			print("Administradora inserida com sucesso: <b>$nome</b>");
+		  }
+	?>
+	<p><a href="./administradoras.php">Mostrar</a></p>
+	</div>
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>IDwell</h4>

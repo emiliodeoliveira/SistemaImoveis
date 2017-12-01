@@ -89,6 +89,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         $Comp=$linha['complemento'];
         $Bairro=$linha["bairro"];
         $Num=$linha['numero'];
+        $Administradora=$linha['idAdmin'];
+        $Sindico=$linha['idPessoa'];
         $Imagem=$linha['imgId'];
       ?>
         <div class='ppi-default-row'>
@@ -114,6 +116,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
         </div>
       </div>
+    </div>
       
 
   </div>

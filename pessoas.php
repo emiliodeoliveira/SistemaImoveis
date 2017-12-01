@@ -27,7 +27,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <button class="ppi-default-bar-item ppi-default-button ppi-default-hide-large ppi-default-hover-none ppi-default-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="ppi-default-bar-item ppi-default-left">iDwell</span>
 </div>
-
 <!-- Sidebar/menu -->
 <nav class="ppi-default-sidebar ppi-default-collapse ppi-default-white ppi-default-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="ppi-default-container ppi-default-row">
