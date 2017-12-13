@@ -110,7 +110,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>IDwell</h4>
-    <p>Powered by Emilio de Oliveira e Bruno de Oliveira</a></p>
+    <p>Developed by Emilio de Oliveira</p>
   </footer>
   <!-- End page content -->
 </div>

@@ -104,15 +104,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             Clique aqui para adicionar a foto!
             <input type="file" name="imgAdmin" id="imgAdmin"/>
           </label>
-        </div>    
+          </div>    
         <input class="ppi-default-button ppi-default-indigo" type="submit" value="Enviar"></input>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-
-
-    </div>
-    
+  </div> 
   <br>
   <div class="ppi-default-container ppi-default-dark-grey ppi-default-padding-32">
     <div class="ppi-default-row">
@@ -132,7 +129,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>IDwell</h4>
-    <p>Powered by Emilio de Oliveira e Bruno de Oliveira</a></p>
+    <p>Developed by Emilio de Oliveira</p>
   </footer>
   <!-- End page content -->
 	</div>
