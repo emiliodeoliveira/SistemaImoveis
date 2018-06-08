@@ -1,13 +1,5 @@
-<?php  
-  session_start();
-  if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
-  {
-    unset($_SESSION['login']);
-    unset($_SESSION['senha']);
-    header('location:login.php');
-  }
-  $logado = $_SESSION['login'];
-  $usuario = $_SESSION['login'];
+<?php
+  include('sys/auth.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -100,7 +92,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Footer -->
   <footer class="ppi-default-container ppi-default-padding-16 ppi-default-light-grey">
     <h4>IDwell</h4>
-    <p>Powered by Emilio de Oliveira e Bruno de Oliveira</a></p>
+    <p>Powered by Emilio de Oliveira</a></p>
   </footer>
   <!-- End page content -->
 </div>

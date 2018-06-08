@@ -1,3 +1,6 @@
+<?php
+  include('sys/auth.php');
+?>
 <!DOCTYPE html>
 <html>
 <title>iDwell - Cadastro de lotes</title>
